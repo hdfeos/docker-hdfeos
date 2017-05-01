@@ -13,6 +13,13 @@ RUN apt-get -yq install gcc \
                         libghc6-zlib-dev
 
 #Build HDF4
+RUN wget ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos/latest_release/hdf-4.2.10.tar.gz; \
+    tar xjvf hdf-4.2.10.tar.gz; \
+    cd hdf-4.2.10; \
+    ./configure --prefix=/usr/local/; \
+    make && make install; \
+    cd ..; \
+    rm -rf /hdf-4.2.10 /hdf-4.2.10.tar.gz 
 
 #Build HDF5
 RUN wget http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.13.tar.bz2; \
