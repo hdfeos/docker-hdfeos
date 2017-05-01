@@ -1,1 +1,1 @@
-Debian based image with NetCDF C library built against HDF5
+Debian based image with HDF-EOS2/5 library built against HDF4/HDF5
