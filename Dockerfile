@@ -31,7 +31,7 @@ RUN wget ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos/latest_release/HDF-EOS2.19v1.00.t
     rm -rf /hdfeos /HDF-EOS2.19v1.00.tar.Z 
 
 #Build HDF5
-RUN wget ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos/latest_release/hdf5-1.8.12.tar.gz; \
+RUN wget ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos5/latest_release/hdf5-1.8.12.tar.gz; \
     tar xjvf hdf5-1.8.12.tar.gz; \
     cd hdf5-1.8.12; \
     ./configure --prefix=/usr/local/; \
@@ -40,7 +40,7 @@ RUN wget ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos/latest_release/hdf5-1.8.12.tar.gz
     rm -rf /hd5f-1.8.12 /hdf5-1.8.12.tar.gz 
     
 #Build HDF-EOS5
-RUN wget ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos/latest_release/HDF-EOS5.1.15.tar.Z; \
+RUN wget ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos5/latest_release/HDF-EOS5.1.15.tar.Z; \
     tar zxvf HDF-EOS5.1.15.tar.Z; \
     cd hdfeos; \
     ./configure --prefix=/usr/local/ --enable-install-include --with-hdf5=/usr/local; \
