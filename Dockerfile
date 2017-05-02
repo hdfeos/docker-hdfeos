@@ -23,7 +23,7 @@ RUN wget ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos/latest_release/hdf-4.2.10.tar.gz;
 
 #Build HDF-EOS2
 RUN wget ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos/latest_release/HDF-EOS2.19v1.00.tar.Z; \
-    tar xjvf HDF-EOS2.19v1.00.tar.Z; \
+    tar zxvf HDF-EOS2.19v1.00.tar.Z; \
     cd hdfeos; \
     ./configure --prefix=/usr/local/ --enable-install-include --with-hdf4=/usr/local; \
     make && make install; \
@@ -31,4 +31,4 @@ RUN wget ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos/latest_release/HDF-EOS2.19v1.00.t
     rm -rf /hdfeos /HDF-EOS2.19v1.00.tar.Z 
 
 #Install HDF-EOS5
-RUN apt-get hdf-eos5
+RUN apt-get install hdf-eos5
