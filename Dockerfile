@@ -1,6 +1,6 @@
-FROM debian:wheezy
+FROM debian:jessie
 
-MAINTAINER John Foster <johntfosterjr@gmail.com>
+MAINTAINER The HDF-EOS Tools and Information Center <eoshelp@hdfgroup.org>
 
 ENV HOME /root
 
@@ -21,15 +21,14 @@ RUN wget ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos/latest_release/hdf-4.2.10.tar.gz;
     cd ..; \
     rm -rf /hdf-4.2.10 /hdf-4.2.10.tar.gz 
 
-#Build HDF5
-RUN wget http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.8.13.tar.bz2; \
-    tar xjvf hdf5-1.8.13.tar.bz2; \
-    cd hdf5-1.8.13; \
-    ./configure --prefix=/usr/local/hdf5; \
+#Build HDF-EOS2
+RUN wget ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos/latest_release/HDF-EOS2.19v1.00.tar.Z; \
+    tar xjvf HDF-EOS2.19v1.00.tar.Z; \
+    cd hdfeos; \
+    ./configure --prefix=/usr/local/ --enable-install-include --with-hdf4=/usr/local; \
     make && make install; \
     cd ..; \
-    rm -rf /hdf5-1.8.13 /hdf5-1.8.13.tar.bz2 
+    rm -rf /hdfeos /HDF-EOS2.19v1.00.tar.Z 
 
-#Build HDF-EOS2
-
-#Build HDF-EOS5
+#Install HDF-EOS5
+RUN apt-get hdf-eos5
