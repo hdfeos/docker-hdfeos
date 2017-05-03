@@ -11,7 +11,10 @@ RUN apt-get -yq install gcc \
                         bzip2 \
                         tar \
                         libghc-zlib-dev \
-                        libjpeg-dev
+                        libjpeg-dev \
+                        gfortran \
+                        bison \
+                        flex
 
 #Build HDF4
 RUN wget ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos/latest_release/hdf-4.2.10.tar.gz; \
