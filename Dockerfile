@@ -10,11 +10,12 @@ RUN apt-get -yq install gcc \
                         wget \
                         bzip2 \
                         tar \
-                        libghc-zlib-dev
+                        libghc-zlib-dev \
+                        libjpeg-dev
 
 #Build HDF4
 RUN wget ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos/latest_release/hdf-4.2.10.tar.gz; \
-    tar xjvf hdf-4.2.10.tar.gz; \
+    tar zxvf hdf-4.2.10.tar.gz; \
     cd hdf-4.2.10; \
     ./configure --prefix=/usr/local/; \
     make && make install; \
@@ -32,7 +33,7 @@ RUN wget ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos/latest_release/HDF-EOS2.19v1.00.t
 
 #Build HDF5
 RUN wget ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos5/latest_release/hdf5-1.8.12.tar.gz; \
-    tar xjvf hdf5-1.8.12.tar.gz; \
+    tar zxvf hdf5-1.8.12.tar.gz; \
     cd hdf5-1.8.12; \
     ./configure --prefix=/usr/local/; \
     make && make install; \
