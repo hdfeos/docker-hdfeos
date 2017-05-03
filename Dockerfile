@@ -47,7 +47,7 @@ RUN wget ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos5/latest_release/hdf5-1.8.12.tar.g
 #Build HDF-EOS5
 RUN wget ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos5/latest_release/HDF-EOS5.1.15.tar.Z; \
     tar zxvf HDF-EOS5.1.15.tar.Z; \
-    cd hdfeos; \
+    cd hdfeos5; \
     ./configure --prefix=/usr/local/ --enable-install-include --with-hdf5=/usr/local; \
     make && make install; \
     cd ..; \
