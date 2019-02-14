@@ -18,7 +18,7 @@ RUN apt-get -yq install gcc \
                         file
 
 #Build HDF4
-RUN wget ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos/latest_release/hdf-4.2.13.tar.gz; \
+RUN wget https://observer.gsfc.nasa.gov/ftp/edhs/hdfeos/latest_release/hdf-4.2.13.tar.gz; \
     tar zxvf hdf-4.2.13.tar.gz; \
     cd hdf-4.2.13; \
     ./configure --prefix=/usr/local/; \
@@ -27,7 +27,7 @@ RUN wget ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos/latest_release/hdf-4.2.13.tar.gz;
     rm -rf /hdf-4.2.13 /hdf-4.2.13.tar.gz 
 
 #Build HDF-EOS2
-RUN wget ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos/latest_release/HDF-EOS2.20v1.00.tar.Z; \
+RUN wget https://observer.gsfc.nasa.gov/ftp/edhs/hdfeos/latest_release/HDF-EOS2.20v1.00.tar.Z; \
     tar zxvf HDF-EOS2.20v1.00.tar.Z; \
     cd hdfeos; \
     ./configure --prefix=/usr/local/ --enable-install-include --with-hdf4=/usr/local; \
@@ -36,7 +36,7 @@ RUN wget ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos/latest_release/HDF-EOS2.20v1.00.t
     rm -rf /hdfeos /HDF-EOS2.20v1.00.tar.Z 
 
 #Build HDF5
-RUN wget ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos5/latest_release/hdf5-1.8.19.tar.gz; \
+RUN wget https://observer.gsfc.nasa.gov/ftp/edhs/hdfeos5/latest_release/hdf5-1.8.19.tar.gz; \
     tar zxvf hdf5-1.8.19.tar.gz; \
     cd hdf5-1.8.19; \
     ./configure --prefix=/usr/local/; \
@@ -45,7 +45,7 @@ RUN wget ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos5/latest_release/hdf5-1.8.19.tar.g
     rm -rf /hd5f-1.8.19 /hdf5-1.8.19.tar.gz 
     
 #Build HDF-EOS5
-RUN wget ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos5/latest_release/HDF-EOS5.1.16.tar.Z; \
+RUN wget https://observer.gsfc.nasa.gov/ftp/edhs/hdfeos5/latest_release/HDF-EOS5.1.16.tar.Z; \
     tar zxvf HDF-EOS5.1.16.tar.Z; \
     cd hdfeos5; \
     ./configure --prefix=/usr/local/ --enable-install-include --with-hdf5=/usr/local; \
