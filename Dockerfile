@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:stable
 
 MAINTAINER The HDF-EOS Tools and Information Center <eoshelp@hdfgroup.org>
 
@@ -39,7 +39,7 @@ RUN wget https://observer.gsfc.nasa.gov/ftp/edhs/hdfeos/latest_release/HDF-EOS2.
 RUN wget https://observer.gsfc.nasa.gov/ftp/edhs/hdfeos5/latest_release/hdf5-1.8.19.tar.gz; \
     tar zxvf hdf5-1.8.19.tar.gz; \
     cd hdf5-1.8.19; \
-    ./configure --prefix=/usr/local/; \
+    ./configure --prefix=/usr/local/ --with-default-api-version=v16; \
     make && make install; \
     cd ..; \
     rm -rf /hd5f-1.8.19 /hdf5-1.8.19.tar.gz 
