@@ -45,7 +45,7 @@ RUN wget https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8/hdf5-1.8.19/src
     rm -rf /hd5f-1.8.19 /hdf5-1.8.19.tar.gz 
     
 # Build HDF-EOS5
-RUN wget "https://git.earthdata.nasa.gov/rest/git-lfs/storage/DAS/hdfeos5/7054de24b90b6d9533329ef8dc89912c5227c83fb447792103279364e13dd452?response-content-disposition=attachment%3B%20filename%3D%22HDF-EOS5.1.16.tar.Z%22%3B%20filename*%3Dutf-8%27%27HDF-EOS5.1.16.tar.Z"; \
+RUN wget -O HDF-EOS5.1.16.tar.Z "https://git.earthdata.nasa.gov/rest/git-lfs/storage/DAS/hdfeos5/7054de24b90b6d9533329ef8dc89912c5227c83fb447792103279364e13dd452?response-content-disposition=attachment%3B%20filename%3D%22HDF-EOS5.1.16.tar.Z%22%3B%20filename*%3Dutf-8%27%27HDF-EOS5.1.16.tar.Z"; \
     tar zxvf HDF-EOS5.1.16.tar.Z; \
     cd hdfeos5; \
     ./configure --prefix=/usr/local/ --enable-install-include --with-hdf5=/usr/local; \
