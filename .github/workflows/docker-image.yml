@@ -14,5 +14,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v5
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+    - name: Build and push Dockerfile
+      uses: docker/build-push-action@v6
+      with:
+        context: .
+        file: Dockerfile
+        builder: ${{ steps.buildx.outputs.name }}
+        platforms: linux/amd64
+        push: true
+        tags: hdfeos/hdfeos:latest
+
