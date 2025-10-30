@@ -47,7 +47,7 @@ RUN wget https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8/hdf5-1.8.22/src
 # Build HDF-EOS5
 RUN wget -O HDF-EOS5.2.0.tar.gz "https://git.earthdata.nasa.gov/projects/DAS/repos/hdfeos5/raw/hdf-eos5-2.0-src.tar.gz?at=refs%2Fheads%2FHDFEOS5_2.0"; \
     tar zxvf HDF-EOS5.2.0.tar.Z; \
-    cd hdfeos5; \
+    cd hdf-eos5-2.0; \
     ./configure --prefix=/usr/local/ --enable-install-include --with-hdf5=/usr/local; \
     make && make install; \
     cd ..; \
