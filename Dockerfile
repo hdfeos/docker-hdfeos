@@ -36,19 +36,19 @@ RUN wget -O hdfeos2.tar.gz "https://git.earthdata.nasa.gov/projects/DAS/repos/hd
     rm -rf /hdf-eos2-3.0 /hdfeos.tar.gz 
 
 # Build HDF5
-RUN wget https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8/hdf5-1.8.19/src/hdf5-1.8.19.tar.gz; \
-    tar zxvf hdf5-1.8.19.tar.gz; \
-    cd hdf5-1.8.19; \
+RUN wget https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8/hdf5-1.8.22/src/hdf5-1.8.22.tar.gz; \
+    tar zxvf hdf5-1.8.22.tar.gz; \
+    cd hdf5-1.8.22; \
     ./configure --prefix=/usr/local/ --with-default-api-version=v16; \
     make && make install; \
     cd ..; \
-    rm -rf /hd5f-1.8.19 /hdf5-1.8.19.tar.gz 
+    rm -rf /hd5f-1.8.22 /hdf5-1.8.22.tar.gz 
     
 # Build HDF-EOS5
-RUN wget -O HDF-EOS5.1.16.tar.Z "https://git.earthdata.nasa.gov/rest/git-lfs/storage/DAS/hdfeos5/7054de24b90b6d9533329ef8dc89912c5227c83fb447792103279364e13dd452?response-content-disposition=attachment%3B%20filename%3D%22HDF-EOS5.1.16.tar.Z%22%3B%20filename*%3Dutf-8%27%27HDF-EOS5.1.16.tar.Z"; \
-    tar zxvf HDF-EOS5.1.16.tar.Z; \
+RUN wget -O HDF-EOS5.2.0.tar.gz "https://git.earthdata.nasa.gov/projects/DAS/repos/hdfeos5/raw/hdf-eos5-2.0-src.tar.gz?at=refs%2Fheads%2FHDFEOS5_2.0"; \
+    tar zxvf HDF-EOS5.2.0.tar.Z; \
     cd hdfeos5; \
     ./configure --prefix=/usr/local/ --enable-install-include --with-hdf5=/usr/local; \
     make && make install; \
     cd ..; \
-    rm -rf /hdfeos5 /HDF-EOS5.1.16.tar.Z 
+    rm -rf /hdfeos5 /HDF-EOS5.2.0.tar.Z 
